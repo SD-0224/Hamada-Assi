@@ -377,5 +377,8 @@ footer .heart {
     -moz-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     -o-transform: translate(0, -50%);
-}
+  }
+  .category {
+    max-width: 300px;
+  }
 }
