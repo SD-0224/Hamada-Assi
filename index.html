@@ -12,216 +12,73 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Web Topics | Hamada</title>
   </head>
-  <body>
+  <body class="light-mode">
     <header>
       <p id="logo">Web Topics</p>
       <nav>
         <ul>
-          <li>
-            <a href=""><ion-icon name="moon-outline" class="icon"></ion-icon>Dark Mode</a>
+          <li onclick="toggleMode()">
+            <ion-icon name="moon-outline" class="icon"></ion-icon>
+            <span>Dark Mode</span>
           </li>
           <li>
-            <a href=""><ion-icon name="heart-outline" class="icon"></ion-icon>Favorites</a>
+            <a href=""
+              ><ion-icon name="heart-outline" class="icon"></ion-icon>
+              <span>Favorites</span></a
+            >
           </li>
         </ul>
       </nav>
     </header>
     <main>
       <section class="welcome-section">
-        <h1>Welcome to our website!</h1>
-        <p>We have a new design that's fresh, modern, and easy to use.</p>
+        <div class="text">
+          <h1>Welcome to our website!</h1>
+          <p>We have a new design that's fresh, modern, and easy to use.</p>
+        </div>
       </section>
       <section class="content-container">
         <div class="search-container">
-          <div class="search-field">
-            <ion-icon name="search-outline"></ion-icon>
-          <input type="text" placeholder="Search the website...">
-          </div>
+          <form action="" class="search-field">
+            <ion-icon name="search-outline" class="icon"></ion-icon>
+            <input type="text" placeholder="Search the website..." />
+            <div class="drop">
+              <div class="drop-down">
+                <label for="sort">Sort by:</label>
+                <select id="sort" name="sort" class="sort-select">
+                  <option value="item1">Default</option>
+                  <option value="item2">Default</option>
+                  <option value="item3">Default</option>
+                  <option value="item4">Default</option>
+                </select>
+              </div>
+              <div class="drop-down">
+                <label for="filter">Filter by:</label>
+                <select id="filter" name="filter" class="filter-select">
+                  <option value="item1">Default</option>
+                  <option value="item2">Default</option>
+                  <option value="item3">Default</option>
+                  <option value="item4">Default</option>
+                </select>
+              </div>
+            </div>
+          </form>
           <h2 id="search-result">"<span>24</span>" Web Topics Found</h2>
         </div>
-        <div class="courses">
-          <article class="course">
-            <a href="">
-              <img src="./Logos/html.png" alt="Web Development course logo" />
-              <div class="course-info">
-                <p class="category">Web Development Languages</p>
-                <p class="topic">HTML</p>
-                <div class="rating">
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-half"></ion-icon>
-                </div>
-                <p class="name">Author: Sarah Smith</p>
-              </div>
-            </a>
-          </article>
-          <article class="course">
-            <a href="">
-              <img
-                src="./Logos/javascript.jpg"
-                alt="Web Development course logo"
-              />
-              <div class="course-info">
-                <p class="category">Web Development Languages</p>
-                <p class="topic">HTML</p>
-                <div class="rating">
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-half"></ion-icon>
-                </div>
-                <p class="name">Sarah Smith</p>
-              </div>
-            </a>
-          </article>
-          <article class="course">
-            <a href="">
-              <img src="./Logos/angular.png" alt="Web Development course logo" />
-              <div class="course-info">
-                <p class="category">Web Development Languages</p>
-                <p class="topic">HTML</p>
-                <div class="rating">
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-half"></ion-icon>
-                </div>
-                <p class="name">Sarah Smith</p>
-              </div>
-            </a>
-          </article>
-          <article class="course">
-            <a href="">
-              <img src="./Logos/devops.png" alt="Web Development course logo" />
-              <div class="course-info">
-                <p class="category">Web Development Languages</p>
-                <p class="topic">HTML</p>
-                <div class="rating">
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-half"></ion-icon>
-                </div>
-                <p class="name">Sarah Smith</p>
-              </div>
-            </a>
-          </article>
-          <article class="course">
-            <a href="">
-              <img src="./Logos/json.png" alt="Web Development course logo" />
-              <div class="course-info">
-                <p class="category">Web Development Languages</p>
-                <p class="topic">HTML</p>
-                <div class="rating">
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star-half"></ion-icon>
-                </div>
-                <p class="name">Sarah Smith</p>
-              </div>
-            </a>
-          </article>
-          <article class="course">
-              <a href="">
-                <img src="./Logos/django.jpeg" alt="Web Development course logo" />
-                <div class="course-info">
-                  <p class="category">Web Development Languages</p>
-                  <p class="topic">HTML</p>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star-half"></ion-icon>
-                  </div>
-                  <p class="name">Author: Sarah Smith</p>
-                </div>
-              </a>
-            </article>
-            <article class="course">
-              <a href="">
-                <img
-                  src="./Logos/css.webp"
-                  alt="Web Development course logo"
-                />
-                <div class="course-info">
-                  <p class="category">Web Development Languages</p>
-                  <p class="topic">HTML</p>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star-half"></ion-icon>
-                  </div>
-                  <p class="name">Sarah Smith</p>
-                </div>
-              </a>
-            </article>
-            <article class="course">
-              <a href="">
-                <img src="./Logos/ajax.gif" alt="Web Development course logo" />
-                <div class="course-info">
-                  <p class="category">Web Development Languages</p>
-                  <p class="topic">HTML</p>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star-half"></ion-icon>
-                  </div>
-                  <p class="name">Sarah Smith</p>
-                </div>
-              </a>
-            </article>
-            <article class="course">
-              <a href="">
-                <img src="./Logos/cloud.jpeg" alt="Web Development course logo" />
-                <div class="course-info">
-                  <p class="category">Web Development Languages</p>
-                  <p class="topic">HTML</p>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star-half"></ion-icon>
-                  </div>
-                  <p class="name">Sarah Smith</p>
-                </div>
-              </a>
-            </article>
-            <article class="course">
-              <a href="">
-                <img src="./Logos/accessibility.png" alt="Web Development course logo" />
-                <div class="course-info">
-                  <p class="category">Web Development Languages</p>
-                  <p class="topic">HTML</p>
-                  <div class="rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star-half"></ion-icon>
-                  </div>
-                  <p class="name">Sarah Smith</p>
-                </div>
-              </a>
-            </article>
-        </div>
+        <div id="courses" class="courses"></div>
       </section>
     </main>
     <footer>
-      <p>Develop with&nbsp;<ion-icon name="heart" class="heart"></ion-icon>&nbsp;&#169; 2023 </p>
+      <p>
+        Develop with&nbsp;<ion-icon name="heart" class="heart"></ion-icon
+        >&nbsp;&#169; 2023
+      </p>
     </footer>
+    <script>
+      function toggleMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+    </script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -230,5 +87,6 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
