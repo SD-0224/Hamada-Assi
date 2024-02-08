@@ -115,6 +115,7 @@ header .icon{
 .course {
     background: var(--bg_default);
     max-width: 220px; 
+    min-height: 270px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 0px var(--lines-color);
 }
