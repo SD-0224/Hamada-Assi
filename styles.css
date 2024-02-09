@@ -114,7 +114,7 @@ header .icon {
   left: 0;
   top: 0;
   border-bottom: 50px solid transparent;
-  border-left: 70vw solid rgba(var(--brand-primary), 0);
+  border-left: 70vw solid var(--brand-primary);
 }
 .welcome-section::before {
   content: "";
