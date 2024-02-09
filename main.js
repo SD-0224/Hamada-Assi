@@ -24,7 +24,7 @@ fetch('data.json').then(response => response.json()).then(data => {
         createRating(courseElement.rating);
         box.innerHTML =
             `
-            <img src="./Logos/${courseElement.image}" alt="${courseElement.topic} course logo" />
+            <img src="./Logos/${courseElement.image}" alt="${courseElement.topic} course logo" class="img-in-box"/>
             <div class="course-info">
               <h4 class="category">${courseElement.category}</h4>
               <h5 class="topic">${courseElement.topic}</h5>
