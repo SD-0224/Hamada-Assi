@@ -21,11 +21,9 @@
             <ion-icon name="moon-outline" class="icon"></ion-icon>
             <span>Dark Mode</span>
           </li>
-          <li>
-            <a href=""
-              ><ion-icon name="heart-outline" class="icon"></ion-icon>
-              <span>Favorites</span></a
-            >
+          <li onclick="toggleFavorites()">
+            <ion-icon name="heart-outline" class="icon"></ion-icon>
+            <span>Favorites</span>
           </li>
         </ul>
       </nav>
@@ -71,7 +69,7 @@
         <h2>My Favorites Topics</h2>
         <div class="favorite-container">
           <a href="./details.html" class="favorite-card">
-            <img src="./Logos/react.webp" alt="react logo" class="img-box">
+            <img src="./Logos/react.webp" alt="react logo" class="img-box" />
             <h3 class="favorite-topic">React</h3>
             <div class="rating">
               <ion-icon name="star"></ion-icon>
@@ -82,7 +80,7 @@
             </div>
           </a>
           <a href="./details.html" class="favorite-card">
-            <img src="./Logos/cloud.jpeg" alt="cloud logo" class="img-box">
+            <img src="./Logos/cloud.jpeg" alt="cloud logo" class="img-box" />
             <h3 class="favorite-topic">Cloud Computing</h3>
             <div class="rating">
               <ion-icon name="star"></ion-icon>
@@ -104,6 +102,12 @@
     <script>
       function toggleMode() {
         document.body.classList.toggle("dark-mode");
+      }
+
+      
+      function toggleFavorites() {
+        const fav = document.getElementsByClassName("my-favorites");
+        fav[0].classList.toggle("show");
       }
     </script>
     <script

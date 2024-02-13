@@ -490,7 +490,10 @@ button ion-icon {
   bottom: 0;
   z-index: 100;
   box-shadow: 0px 0px 5px 0px var(--lines-color);
-  /* display: none;*/
+  display: none;
+}
+.show{
+  display: block;
 }
 .my-favorites h2 {
   padding-bottom: 15px;
