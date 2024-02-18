@@ -75,26 +75,32 @@ header nav ul {
 }
 
 header nav ul li {
-  list-style: none;
-  border: 1px solid var(--lines-color);
-  padding: 5px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
+}
 
+header nav ul li:first-child {
+  margin-right: 5px;
+}
+header nav ul li .btn-nav {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
   cursor: pointer;
   user-select: none;
+  padding: 5px;
+  border: 1px solid var(--lines-color);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  background: transparent;
 }
 
-header nav ul li:first-child {
-  margin-right: 5px;
+header nav ul li .btn-nav * {
+  color: var(--body-text);
 }
+
 a {
   text-decoration: none;
   color: var(--body-text);
@@ -330,6 +336,7 @@ footer .heart {
 /* start details page styles */
 .container {
   position: relative;
+  overflow: hidden;
 }
 
 .data {
@@ -418,10 +425,8 @@ footer .heart {
 }
 
 .right-col-card {
-  display: flex;
-  align-items: center;
-  padding-bottom: 30%;
   flex-basis: 35%;
+  margin-top: 40px;
 }
 .img-card {
   background: var(--bg_default_light);
@@ -476,7 +481,7 @@ footer .heart {
   cursor: pointer;
 }
 
-button ion-icon {
+button .add-myFavorites {
   color: var(--body-text_dark);
   font-size: 20px;
 }
@@ -492,7 +497,7 @@ button ion-icon {
   box-shadow: 0px 0px 5px 0px var(--lines-color);
   display: none;
 }
-.show{
+.show {
   display: block;
 }
 .my-favorites h2 {
@@ -560,7 +565,7 @@ button ion-icon {
     padding-right: 0;
   }
 
-  header nav ul li span {
+  header nav ul li .btn-nav span {
     display: none;
   }
   .search-field {
