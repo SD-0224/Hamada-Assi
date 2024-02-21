@@ -9,7 +9,7 @@
     <title>Web Topics | Hamada</title>
   </head>
   <body class="light-mode">
-    <header>
+    <header class="container">
       <h1><a href="index.html" id="logo">Web Topics</a></h1>
       <nav>
         <ul>
@@ -35,13 +35,13 @@
           <p>We have a new design that's fresh, modern, and easy to use.</p>
         </div>
       </section>
-      <section class="content-container">
+      <section class="content-container container">
         <div class="search-container">
           <form action="" class="search-field">
             <ion-icon name="search-outline" class="icon"></ion-icon>
             <input type="text" placeholder="Search the website..." />
             <div class="drop">
-              <div class="drop-down">
+              <div class="drop-down sort-drop-down">
                 <label for="sort">Sort by:</label>
                 <select id="sort" name="sort" class="sort-select">
                   <option value="item1">Default</option>
@@ -50,7 +50,7 @@
                   <option value="item4">Default</option>
                 </select>
               </div>
-              <div class="drop-down">
+              <div class="drop-down filter-drop-down">
                 <label for="filter">Filter by:</label>
                 <select id="filter" name="filter" class="filter-select">
                   <option value="item1">Default</option>
@@ -69,7 +69,7 @@
         <h2>My Favorites Topics</h2>
         <div class="favorite-container">
           <a href="./details.html" class="favorite-card">
-            <img src="./Logos/react.webp" alt="react logo" class="img-box" />
+            <img src="./Logos/react.webp" alt="react logo" class="img-in-box" />
             <h3 class="favorite-topic">React</h3>
             <div class="rating">
               <ion-icon name="star"></ion-icon>

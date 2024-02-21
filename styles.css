@@ -14,6 +14,7 @@
   --body-text_dark: #ededed;
 
   --font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
 }
 
 /* color for light mode */
@@ -52,10 +53,14 @@ a {
   color: var(--body-text);
 }
 
-.img-in-box{
+.container {
+  padding: 0 57px;
+}
+
+.img-in-box {
   width: 100%;
   max-width: 100%;
-  height: 45%;
+  height: 48%;
   object-fit: cover;
   background-color: #fff;
   border-radius: 6px 6px 0 0;
@@ -72,17 +77,18 @@ a {
 .rating {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .rating ion-icon {
   color: #f78b00;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 body {
   color: var(--body-text);
   background: var(--bg_body);
+  font-size: 16px; /* Default font size */
 }
 
 /* start styling header  */
@@ -90,18 +96,22 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
-  height: 60px;
+  height: 70px;
   background: var(--bg_default);
   position: relative;
   z-index: 2;
   box-shadow: 0px -2px 10px 0px var(--body-text_light);
 }
 
+header h1 {
+  display: flex;
+  align-items: center;
+}
+
 header #logo {
   color: var(--brand-primary);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 header nav ul {
@@ -115,10 +125,9 @@ header nav ul li .btn-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
   cursor: pointer;
   user-select: none;
-  padding: 5px;
+  padding: 5px 5px;
   border: 1px solid var(--lines-color);
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -126,10 +135,13 @@ header nav ul li .btn-nav {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   background: transparent;
+  width: 110px;
 }
 
 header nav ul li .btn-nav * {
   color: var(--body-text);
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 header nav ul li button .icon {
@@ -139,7 +151,7 @@ header nav ul li button .icon {
 /* start styling welcome section */
 .welcome-section {
   position: relative;
-  height: 140px;
+  height: 115px;
   background: var(--bg_default);
 }
 
@@ -150,15 +162,16 @@ header nav ul li button .icon {
   top: 0;
   /*border-bottom: 50px solid transparent;
   border-left: 70vw solid var(--brand-primary); */
-  clip-path: polygon(0% 0%, 0% 40%, 85% 0%);
+  clip-path: polygon(0% 0%, 0% 59%, 90% 0%);
   background: linear-gradient(
-    to right top,
-    var(--brand-primary) 40%,
+    to right,
+    var(--brand-primary),
     var(--brand-secondary)
   );
-  width: 90%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
 }
+
 .welcome-section::before {
   content: "";
   position: absolute;
@@ -166,16 +179,16 @@ header nav ul li button .icon {
   top: 0;
   /* border-bottom: 50px solid transparent;
   border-right: 70vw solid var(--brand-secondary); */
-  clip-path: polygon(15% 0%, 100% 0%, 100% 40%);
+  clip-path: polygon(15% 0%, 100% 0%, 100% 60%);
   background: var(--brand-secondary);
   width: 100%;
-  height: 80%;
+  height: 100%;
 }
 
 .welcome-section .text {
   width: fit-content;
   position: absolute;
-  top: 50%;
+  top: 63%;
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
@@ -186,13 +199,15 @@ header nav ul li button .icon {
 
 .welcome-section .text h1 {
   color: var(--brand-secondary);
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 1.4rem;
 }
 
 /* start styling search part */
 .content-container {
-  margin: 20px 50px 50px;
+  margin: 20px 0 50px;
 }
+
 .content-container .search-container .search-field {
   position: relative;
   display: flex;
@@ -210,7 +225,7 @@ header nav ul li button .icon {
 .search-field input[type="text"] {
   width: 100%;
   height: 45px;
-  font-size: 16px;
+  font-size: 1rem;
   padding: 5px 5px 5px 40px;
   background: var(--bg_default);
   outline-color: var(--brand-primary);
@@ -221,7 +236,7 @@ header nav ul li button .icon {
   -o-border-radius: 6px 0 0 6px;
 }
 .search-field .icon {
-  font-size: 16px;
+  font-size: 1rem;
   position: absolute;
   top: 50%;
   left: 0;
@@ -239,35 +254,37 @@ header nav ul li button .icon {
 }
 
 .search-field .drop .drop-down {
-  position: relative;
-}
-.search-field .drop .drop-down label {
-  position: absolute;
-  top: 5px;
-  left: 15px;
-  font-size: 12px;
-}
-.search-field .drop .drop-down select {
-  padding-left: 10px;
-  width: 100px;
+  width: 180px;
   height: 100%;
-  font-size: 12px;
-  padding-top: 10px;
   background: var(--bg_default);
-  outline-color: var(--brand-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
 }
 
-.search-field .drop .drop-down .sort-select {
+.search-field .drop .drop-down label {
+  font-size: 0.75rem;
+  padding-left: 4px;
+}
+.search-field .drop .drop-down select {
+  font-size: 0.875rem;
+  font-weight: 500;
+  outline-color: var(--brand-primary);
+  background: transparent;
+}
+
+.search-field .drop .sort-drop-down {
   border-left: 1px solid var(--lines-color);
   border-right: 1px solid var(--lines-color);
 }
 
-.search-field .drop .drop-down .filter-select {
+.search-field .drop .drop-down .filter-drop-down {
   border-radius: 0 6px 6px 0;
 }
 
 .content-container #search-result {
-  padding: 20px 0;
+  padding: 20px 0 30px;
 }
 
 /* start course card styling */
@@ -279,46 +296,35 @@ header nav ul li button .icon {
 
 .courses .course {
   background: var(--bg_default);
-  height: 268px;
+  height: 280px;
   border-radius: 6px;
   box-shadow: 0px 0px 5px 0px var(--lines-color);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+  display: flex;
+  flex-direction: column;
 }
-/* 
-.courses .course img {
-  width: 100%;
-  max-width: 100%;
-  height: 45%;
-  object-fit: cover;
-  background-color: #fff;
-  border-radius: 6px 6px 0 0;
-  -webkit-border-radius: 6px 6px 0 0;
-  -moz-border-radius: 6px 6px 0 0;
-  -ms-border-radius: 6px 6px 0 0;
-  -o-border-radius: 6px 6px 0 0;
-} */
 
 .courses .course .course-info {
+  flex-grow: 1;
   padding: 15px;
   display: flex;
   flex-direction: column;
 }
 
 .courses .course .course-info .category {
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  max-width: 200px;
+  max-width: 215px;
 }
 
 .courses .course .course-info .topic {
-  font-size: 15px;
+  font-size: 0.95rem;
   font-weight: 800;
   min-height: 50px;
   overflow: hidden;
@@ -329,7 +335,7 @@ header nav ul li button .icon {
 }
 
 .courses .course .course-info .name {
-  font-size: 13px;
+  font-size: 0.8rem;
 }
 
 /* start styling footer */
@@ -339,7 +345,10 @@ footer p {
   align-items: center;
   color: var(--body-text);
   padding-bottom: 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
+
 footer .heart {
   color: var(--heart-color);
 }
@@ -361,32 +370,32 @@ footer .heart {
   -o-transform: translate(-50%, 0);
   display: flex;
   justify-content: space-between;
-  width: 60vw;
+  width: 62vw;
 }
 .data-container .data .text-data {
-  flex-basis: 60%;
+  flex-basis: 61%;
 }
 
 .data-container .data .text-data .details {
   position: relative;
-  padding: 40px 0px;
+  padding: 30px 0px;
 }
 
-.data .text-data .details  *:not(ion-icon) {
+.data .text-data .details *:not(ion-icon) {
   color: var(--body-text_dark);
 }
 
 .data .text-data .details h3 {
-  font-size: 17px;
+  font-size: 1.06rem;
   color: var(--brand-secondary);
 }
 
 .data .text-data .details h4 {
-  font-size: 20px;
+  font-size: 1.45rem;
   font-weight: 800;
 }
 .data .text-data .details p {
-  font-size: 14px;
+  font-size: 1rem;
 }
 
 .data .text-data .details::before {
@@ -413,7 +422,7 @@ footer .heart {
 }
 .data .text-data .sub-topics h3 {
   padding: 15px 20px;
-  font-size: 20px;
+  font-size: 1.7rem;
 }
 
 .data .text-data .sub-topics ul li {
@@ -423,22 +432,31 @@ footer .heart {
   align-items: center;
 }
 .data .text-data .sub-topics ul li * {
-  font-size: 17px;
+  font-size: 1.3rem;
 }
+
+.data .text-data .sub-topics ul li ion-icon {
+  font-size: 1.5rem;
+}
+
 .data .text-data .sub-topics ul li ion-icon {
   color: var(--brand-secondary);
   padding-right: 20px;
+  flex-shrink: 0;
 }
 
 /* styles right box that contains image and add favorites button */
 
 .data-container .data .right-col-card {
-  flex-basis: 35%;
-  margin-top: 40px;
+  flex-basis: 36%;
+  margin-top: 30px;
   background: var(--bg_default_light);
-  height: fit-content;
+  height: 415px;
   border: 2px solid var(--lines-color_light);
   box-shadow: 0px 0px 1px 0px var(--lines-color_light);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .data-container .data .right-col-card h3,
@@ -447,7 +465,7 @@ footer .heart {
   color: var(--body-text_light);
 }
 
-.data-container .data .right-col-card img{
+.data-container .data .right-col-card img {
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -455,16 +473,17 @@ footer .heart {
   -o-border-radius: 0;
 }
 
-/* .img-box {
-  width: 100%;
-  max-width: 100%;
-  height: 45%;
-  object-fit: cover;
-  background-color: #fff;
-} */
+.data-container .data .right-col-card .course-info {
+  flex-grow: 1;
+  padding: 15px;
+}
 
+.right-col-card .course-info h3 {
+  min-height: 30px;
+  overflow: hidden;
+}
 .right-col-card .course-info h3 span {
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .right-col-card .course-info h3 span a {
@@ -473,7 +492,7 @@ footer .heart {
 }
 
 .right-col-card .course-info .add-favourites {
-  padding: 15px 10px 10px;
+  padding: 25px 20px 15px;
   border: 1px solid var(--lines-color_light);
 }
 
@@ -483,7 +502,7 @@ footer .heart {
 
 .right-col-card .course-info .add-favourites .add-favourites p,
 .right-col-card .course-info .add-favourites .btn-container p {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .course-info .add-favourites .btn-container button {
@@ -494,16 +513,20 @@ footer .heart {
   color: var(--body-text_dark);
   background: var(--brand-secondary);
   border: none;
-  font-size: 15px;
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   cursor: pointer;
 }
 
+.course-info .add-favourites .btn-container button ion-icon{
+  font-size: 1.6rem;
+}
+
 .add-favourites .btn-container button .add-myFavorites {
   color: var(--body-text_dark);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 /* start favorites styles */
@@ -519,21 +542,30 @@ footer .heart {
 }
 
 .my-favorites h2 {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 800;
 }
 
 .my-favorites .favorite-container {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   grid-auto-rows: 125px;
   gap: 20px;
   max-height: 35vh;
   overflow: auto;
-  padding: 5px;
+  padding: 5px; */
+
+  display: flex;
+  overflow: auto;
 }
 
 .my-favorites .favorite-container .favorite-card {
-  box-shadow: 0px 0px 5px -1px var(--lines-color);
+  width: 120px;
+  min-width: 120px;
+  height: 125px;
+  margin: 10px;
+  box-shadow: 0px 0px 5px 0px var(--lines-color);
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -546,8 +578,8 @@ footer .heart {
 }
 
 .favorite-container .favorite-card .favorite-topic,
-.favorite-container .favorite-card .favorite-card .rating {
-  font-size: 16px;
+.favorite-container .favorite-card .rating {
+  font-size: 1rem;
   padding: 0 10px;
   overflow: hidden;
   white-space: nowrap;
@@ -559,31 +591,77 @@ footer .heart {
 /* ____________________    media query   _________________________*/
 @media (max-width: 992px) {
   .data-container .data {
-    width: 80vw;
+    width: 85vw;
+  }
+  .course-info .add-favourites .btn-container button{
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 880px) {
+  .welcome-section::after {
+    clip-path: polygon(0% 0%, 0% 30%, 120% 0%);
+  }
+  .welcome-section::before {
+    clip-path: polygon(-10% 0%, 100% 0%, 100% 30%);
+  }
+  .course-info .add-favourites .btn-container button{
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 700px) {
-  .data-container .data {
-    width: 90vw;
+  :root {
+    font-size: 14px; /* Change the root font size to 14 pixels for smaller screens */
   }
-}
 
-@media (max-width: 600px) {
+  body {
+    font-size: 0.875rem;
+  }
+  .container {
+    padding: 0 17px;
+  }
+
   header {
-    padding: 0 20px;
-  }
-  .content-container {
-    margin-left: 20px;
-    margin-right: 20px;
+    height: 66px;
   }
 
-  header .icon {
-    padding-right: 0;
+  header nav ul li .btn-nav {
+    width: fit-content;
+  }
+
+  header nav ul li button .icon {
+    padding: 0px 5px;
   }
 
   header nav ul li .btn-nav span {
     display: none;
+  }
+
+  .welcome-section::after {
+    clip-path: polygon(0% 0%, 0% 22%, 120% 0%);
+  }
+  .welcome-section::before {
+    clip-path: polygon(-10% 0%, 100% 0%, 100% 22%);
+  }
+
+  .welcome-section .text {
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    left: 0;
+    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+  }
+  .courses .course .course-info .category {
+    max-width: 300px;
+  }
+
+  .data-container .data {
+    width: 90vw;
   }
   .content-container .search-container .search-field {
     flex-direction: column;
@@ -621,30 +699,9 @@ footer .heart {
     -ms-border-radius: 0 0 6px 0;
     -o-border-radius: 0 0 6px 0;
   }
-
-  .welcome-section::after {
-    height: 55%;
+  .course-info .add-favourites .btn-container button{
+    font-size: 1.2rem;
   }
-  .welcome-section::before {
-    width: 70%;
-    height: 55%;
-  }
-
-  .welcome-section .text {
-    margin-left: 20px;
-    margin-right: 20px;
-    position: relative;
-    left: 0;
-    transform: translate(0, -50%);
-    -webkit-transform: translate(0, -50%);
-    -moz-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    -o-transform: translate(0, -50%);
-  }
-  .courses .course .course-info .category {
-    max-width: 300px;
-  }
-
   /* for details page */
   .data-container .data {
     display: block;
