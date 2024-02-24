@@ -222,6 +222,7 @@ header nav ul li button .icon {
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
+  background: var(--bg_default);
 }
 .search-field input[type="text"],
 .search-field select {
@@ -261,7 +262,6 @@ header nav ul li button .icon {
 .search-field .drop .drop-down {
   width: 180px;
   height: 100%;
-  background: var(--bg_default);
   display: flex;
   flex-direction: column;
   justify-content: center;
