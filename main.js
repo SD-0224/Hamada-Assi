@@ -1,46 +1,47 @@
-const courseContainer = document.getElementById("courses");
+document.addEventListener("DOMContentLoaded", function () {
+  const modeButton = document.getElementById("mode-btn");
+  const modeButtonText = document.getElementById("modeButtonText");
 
-const ratingArray = [];
-// calculate stars shape
-const createRating = (r)=> {
-  let fill = Math.floor(r);
-  for (let i = 1; i < 6; i++) {
-    if (i <= fill) {
-      ratingArray.push("star");
-    } else if (i - fill === 1 && r % 1 !== 0) {
-      ratingArray.push("star-half");
-    }
-    else {
-      ratingArray.push("star-outline");
+  const favoritesButton = document.getElementById("favorites-btn");
+
+
+  // Check if user preference is stored in localStorage
+  const userMode = localStorage.getItem("mode");
+
+  // If userMode is set, use it, otherwise use system default
+  // Then set initial mode based on user preference or system default
+  const isDarkMode = userMode ? userMode === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  // Function to set mode
+  const setMode = (isDarkMode) => {
+    if (isDarkMode) {
+      document.body.classList.add("dark-mode");
+      modeButtonText.textContent = "Light Mode";
+    } else {
+      document.body.classList.remove("dark-mode");
+      modeButtonText.textContent = "Dark Mode";
     }
   }
-};
 
-fetch('data.json').then(response => response.json()).then(data => {
-  data.forEach(courseElement => {
-    // create course card a > img , info ...
-    const box = document.createElement('a');
-    box.href = `./details.html?id=${courseElement.id}`;
-    box.id = courseElement.id;
-    box.classList.add('course');
-    createRating(courseElement.rating);
-    box.innerHTML =
-      `
-            <img src="./Logos/${courseElement.image}" alt="${courseElement.topic} course logo" class="img-in-box"/>
-            <div class="course-info">
-              <h4 class="category">${courseElement.category}</h4>
-              <h5 class="topic">${courseElement.topic}</h5>
-              <div class="rating">
-                <ion-icon name="${ratingArray.shift()}"></ion-icon>
-                <ion-icon name="${ratingArray.shift()}"></ion-icon>
-                <ion-icon name="${ratingArray.shift()}"></ion-icon>
-                <ion-icon name="${ratingArray.shift()}"></ion-icon>
-                <ion-icon name="${ratingArray.shift()}"></ion-icon>
-              </div>
-              <p class="name">Author: ${courseElement.name}</p>
-            </div>
-            `
-    courseContainer.appendChild(box); // push each course data into main courses container
-  });
+  setMode(isDarkMode);
+
+  // Function to toggle mode
+  const toggleMode = () => {
+    const isDarkMode = document.body.classList.toggle("dark-mode");
+    const modeText = isDarkMode ? "Light Mode" : "Dark Mode";
+    modeButtonText.textContent = modeText;
+    localStorage.setItem("mode", isDarkMode ? "dark" : "light");
+  }
+
+  const toggleFavorites = () => {
+    const fav = document.getElementsByClassName("my-favorites");
+    fav[0].classList.toggle("show");
+  };
+
+
+  // Event listener for mode toggle button
+  modeButton.addEventListener("click", toggleMode);
+  favoritesButton.addEventListener("click", toggleFavorites);
+
+  
 });
-

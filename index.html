@@ -14,13 +14,13 @@
       <nav>
         <ul>
           <li>
-            <button class="btn-nav" onclick="toggleMode()">
+            <button class="btn-nav" id="mode-btn">
               <ion-icon name="moon-outline" class="icon"></ion-icon>
-              <span>Dark Mode</span>
+              <span id="modeButtonText">Dark Mode</span>
             </button>
           </li>
           <li>
-            <button class="btn-nav" onclick="toggleFavorites()">
+            <button class="btn-nav" id="favorites-btn">
               <ion-icon name="heart-outline" class="icon"></ion-icon>
               <span>Favorites</span>
             </button>
@@ -37,30 +37,29 @@
       </section>
       <section class="content-container container">
         <div class="search-container">
-          <form action="" class="search-field">
+          <div class="search-field">
             <ion-icon name="search-outline" class="icon"></ion-icon>
-            <input type="text" placeholder="Search the website..." />
+            <input id="searchInput" type="text" placeholder="Search the website..." />
             <div class="drop">
               <div class="drop-down sort-drop-down">
                 <label for="sort">Sort by:</label>
                 <select id="sort" name="sort" class="sort-select">
-                  <option value="item1">Default</option>
-                  <option value="item2">Default</option>
-                  <option value="item3">Default</option>
-                  <option value="item4">Default</option>
+                  <option value="">Default</option>
+                  <option value="TOPIC">Topic</option>
+                  <option value="AUTHOR">Author</option>
                 </select>
               </div>
               <div class="drop-down filter-drop-down">
                 <label for="filter">Filter by:</label>
                 <select id="filter" name="filter" class="filter-select">
-                  <option value="item1">Default</option>
+                  <option value="">Default</option>
                   <option value="item2">Default</option>
                   <option value="item3">Default</option>
                   <option value="item4">Default</option>
                 </select>
               </div>
             </div>
-          </form>
+          </div>
           <h2 id="search-result">"<span>24</span>" Web Topics Found</h2>
         </div>
         <div id="courses" class="courses"></div>
@@ -104,14 +103,14 @@
       rel="stylesheet"
     />
     <script>
-      const toggleMode = () => {
+      /** const toggleMode = () => {
         document.body.classList.toggle("dark-mode");
-      };
+      }; **/
 
-      const toggleFavorites = () => {
+      /**const toggleFavorites = () => {
         const fav = document.getElementsByClassName("my-favorites");
         fav[0].classList.toggle("show");
-      };
+      };**/
     </script>
     <script
       type="module"
@@ -122,5 +121,6 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script type="module" src="./main.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
