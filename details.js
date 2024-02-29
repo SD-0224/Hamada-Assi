@@ -98,7 +98,7 @@ function renderDetails(data) {
 
 function renderSubtopics(data){
     let html = `
-        <h3>HTML Sub Topics</h3>
+        <h3>${data.topic} Sub Topics</h3>
         <ul>
     `;
     data.subtopics.forEach(elm => {
