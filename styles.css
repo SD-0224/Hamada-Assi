@@ -471,6 +471,7 @@ footer .heart {
 }
 
 .data-container .data .right-col-card img {
+  height: 180px;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;

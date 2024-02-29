@@ -10,8 +10,22 @@ fetch(`https://tap-web-1.herokuapp.com/topics/details/${id}`)
     })
     .then(data => {
         theElement = data;
+        localStorage.setItem("Favorites", JSON.stringify([]));
         console.log(data);
         renderCard(data);
+        document.getElementById('addFavoritesBtn').addEventListener('click', function() {
+          let myFavorites = JSON.parse(localStorage.getItem("Favorites")) || [];
+          if(!isFavorites()){
+            // this.textContent = `Remove from Favorites`;
+            myFavorites.push(theElement);
+          }else {
+            // this.textContent = `Add to Favorites`;
+            myFavorites.splice(myFavorites.indexOf(theElement), 1);
+          }
+          console.table(myFavorites);
+          localStorage.setItem("Favorites", JSON.stringify(myFavorites));
+          this.innerHTML = renderBtnText();
+        });
         renderDetails(data);
         renderSubtopics(data);
     })
@@ -125,3 +139,21 @@ function renderSubtopics(data){
 //     // btnText += `<ion-icon name="heart-outline" class="icon add-myFavorites"></ion-icon>`;
 //     return btnText;
 // }
+
+function isFavorites(){
+    let myFavorites = JSON.parse(localStorage.getItem("Favorites")) || [];
+    return myFavorites.some(elm => {
+        return elm.id == id;
+    });
+}
+
+function indexFavorites(){
+  let myFavorites = JSON.parse(localStorage.getItem("Favorites")) || [];
+  return myFavorites.indexOf(theElement);
+}
+
+function renderBtnText(){
+    let btnText = isFavorites() ? "Remove from Favorites" : `Add to Favorites <ion-icon name="heart-outline" class="icon add-myFavorites"></ion-icon>`;
+    // btnText += `<ion-icon name="heart-outline" class="icon add-myFavorites"></ion-icon>`;
+    return btnText;
+}
