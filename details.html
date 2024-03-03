@@ -40,7 +40,9 @@
           <p>We have a new design that's fresh, modern, and easy to use.</p>
         </div>
       </section>
-      <section class="data-container">
+      <div class="loadingIndicator-details" id="loadingIndicator" style="display: none;"><h2>Loading <span id="loadingDots"></span></h2></div>
+        <div class="errorMessage-details" id="errorMessage" style="display: none; color: red;"></div>
+      <section id="dataContainer" class="data-container">
         <div class="data">
           <div class="text-data">
             <div class="details">
@@ -57,30 +59,7 @@
       </section>
       <section class="my-favorites">
         <h2>My Favorites Topics</h2>
-        <div class="favorite-container">
-          <a href="./details.html" class="favorite-card">
-            <img src="./Logos/react.webp" alt="react logo" class="img-in-box" />
-            <h3 class="favorite-topic">React</h3>
-            <div class="rating">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-              <ion-icon name="star-outline"></ion-icon>
-            </div>
-          </a>
-          <a href="./details.html" class="favorite-card">
-            <img src="./Logos/cloud.jpeg" alt="cloud logo" class="img-in-box" />
-            <h3 class="favorite-topic">Cloud Computing</h3>
-            <div class="rating">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-              <ion-icon name="star-outline"></ion-icon>
-            </div>
-          </a>
-        </div>
+        <div class="favorite-container" id="favoriteContainer"></div>
       </section>
     </main>
 
@@ -106,7 +85,7 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script type="module" src="./main.js"></script>
-    <script type="module" src="./details.js"></script>
+    <script type="module" src="./js_Files/shared/mainFunctions.js"></script>
+    <script type="module" src="./js_Files/detailsPage/details.js"></script>
   </body>
 </html>

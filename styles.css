@@ -90,6 +90,23 @@ option {
   font-size: 1rem;
 }
 
+#loadingIndicator,
+#errorMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3rem;
+  background: var(--bg_default);
+  height: 200px;
+}
+
+#loadingDots::after {
+  animation: dots 1s infinite;
+  content: ".";
+  -webkit-animation: dots 1s infinite;
+}
+
 body {
   color: var(--body-text);
   background: var(--bg_body);
@@ -292,6 +309,22 @@ header nav ul li button .icon {
   padding: 20px 0 30px;
 }
 
+.content-container #loadingIndicator,
+.content-container #errorMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3rem;
+  background: var(--bg_default);
+  height: 200px;
+}
+.content-container #loadingIndicator #loadingDots::after {
+  animation: dots 1s infinite;
+  content: ".";
+  -webkit-animation: dots 1s infinite;
+}
+
 /* start course card styling */
 .content-container .courses {
   display: grid;
@@ -359,7 +392,9 @@ footer .heart {
 }
 
 /* start details page styles */
+
 .data-container {
+  display: none;
   position: relative;
   overflow: hidden;
 }
@@ -712,5 +747,14 @@ footer .heart {
   .data-container .data {
     display: block;
     padding-bottom: 20px;
+  }
+}
+
+@keyframes dots {
+  40% {
+    content: "..";
+  }
+  80% {
+    content: "...";
   }
 }

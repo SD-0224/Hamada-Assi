@@ -1,3 +1,5 @@
+import { renderFavoritesCards } from "../HTML_Rendering/renderFavoritesCards.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   const modeButton = document.getElementById("mode-btn");
   const modeButtonText = document.getElementById("modeButtonText");
@@ -36,12 +38,40 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleFavorites = () => {
     const fav = document.getElementsByClassName("my-favorites");
     fav[0].classList.toggle("show");
+
+    if(fav[0].classList.contains("show")){
+      renderFavoritesCards();
+    }
   };
 
 
   // Event listener for mode toggle button
   modeButton.addEventListener("click", toggleMode);
   favoritesButton.addEventListener("click", toggleFavorites);
-
-  
 });
+
+export function isFavorites(id) {
+  let myFavorites = JSON.parse(localStorage.getItem("Favorites")) || [];
+  return myFavorites.some(elm => {
+    return elm.id == id;
+  });
+}
+
+export function indexFavorites(theElement) {
+  let myFavorites = JSON.parse(localStorage.getItem("Favorites")) || [];
+  return myFavorites.indexOf(theElement);
+}
+
+export function renderBtnText(id) {
+  let btnText = isFavorites(id) ? "Remove from Favorites" : `Add to Favorites <ion-icon name="heart-outline" class="icon add-myFavorites"></ion-icon>`;
+  return btnText;
+}
+
+export function getIndexById(objects, targetId) {
+  for (let i = 0; i < objects.length; i++) {
+      if (objects[i].id === targetId) {
+          return i;
+      }
+  }
+  return -1;
+}

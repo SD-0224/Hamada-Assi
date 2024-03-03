@@ -44,7 +44,7 @@
               <div class="drop-down sort-drop-down">
                 <label for="sort">Sort by:</label>
                 <select id="sort" name="sort" class="sort-select">
-                  <option value="">Default</option>
+                  <option value="DEFAULT">Default</option>
                   <option value="TOPIC">Topic</option>
                   <option value="AUTHOR">Author</option>
                 </select>
@@ -52,43 +52,20 @@
               <div class="drop-down filter-drop-down">
                 <label for="filter">Filter by:</label>
                 <select id="filter" name="filter" class="filter-select">
-                  <option value="">Default</option>
-                  <option value="item2">Default</option>
-                  <option value="item3">Default</option>
-                  <option value="item4">Default</option>
+                  <option value="DEFAULT">Default</option>
                 </select>
               </div>
             </div>
           </div>
           <h2 id="search-result">"<span>24</span>" Web Topics Found</h2>
         </div>
+        <div id="loadingIndicator" style="display: none;"><h2>Loading <span id="loadingDots"></span></h2></div>
+        <div id="errorMessage" style="display: none; color: red;"></div>
         <div id="courses" class="courses"></div>
       </section>
       <section class="my-favorites">
         <h2>My Favorites Topics</h2>
-        <div class="favorite-container">
-          <a href="./details.html" class="favorite-card">
-            <img src="./Logos/react.webp" alt="react logo" class="img-in-box" />
-            <h3 class="favorite-topic">React</h3>
-            <div class="rating">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-              <ion-icon name="star-outline"></ion-icon>
-            </div>
-          </a>
-          <a href="./details.html" class="favorite-card">
-            <img src="./Logos/cloud.jpeg" alt="cloud logo" class="img-in-box" />
-            <h3 class="favorite-topic">Cloud Computing</h3>
-            <div class="rating">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star-half"></ion-icon>
-              <ion-icon name="star-outline"></ion-icon>
-            </div>
-          </a>
+        <div class="favorite-container" id="favoriteContainer">
         </div>
       </section>
     </main>
@@ -120,7 +97,7 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script type="module" src="./main.js"></script>
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./js_Files/shared/mainFunctions.js"></script>
+    <script type="module" src="./js_Files/homePage/home.js"></script>
   </body>
 </html>
