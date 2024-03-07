@@ -7,6 +7,7 @@ export const fetchTopics = async function(){
         }
         const data = await response.json();
         return data;
+        
     } catch (error) {
         console.error('Something went wrong. Web topics failed to load.', error);
         throw error;

@@ -3,7 +3,8 @@ import { fetchTopic } from "../fetchData/fetchTopicDetails.js";
 import { renderTopicDetails } from "../HTML_Rendering/renderTopicDetails.js";
 import { renderSubtopics } from "../HTML_Rendering/renderSubtopics.js";
 import { renderFavoritesCards } from "../HTML_Rendering/renderFavoritesCards.js";
-import { getIndexById, isFavorites, renderBtnText } from "../shared/mainFunctions.js";
+import { getIndexById, isFavorites } from "../shared/mainFunctions.js";
+import { renderBtnText } from "../HTML_Rendering/renderBtnText.js";
 
 const id = window.location.href.slice((window.location.href).indexOf('=') + 1);
 let theElement;

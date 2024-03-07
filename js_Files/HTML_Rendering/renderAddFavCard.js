@@ -1,8 +1,8 @@
-import { renderBtnText } from "../shared/mainFunctions.js";
+import { renderBtnText } from "./renderBtnText.js";
 
 export function renderAddFavCard(data) {
     document.querySelector(".right-col-card").innerHTML = `
-          <img src="./Logos/${data.image}" alt="${data.image}" class="img-in-box" />
+          <img src="./images/Logos/${data.image}" alt="${data.image}" class="img-in-box" />
           <div class="course-info">
             <h3>
               <span class="topic">${data.topic}</span> 

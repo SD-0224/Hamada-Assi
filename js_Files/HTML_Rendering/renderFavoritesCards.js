@@ -7,7 +7,7 @@ export const renderFavoritesCards = function () {
         favorites.forEach(element => {
             html += `
             <a href="./details.html?id=${element.id}" class="favorite-card">
-                <img src="./Logos/${element.image}" alt="${element.topic} logo" class="img-in-box" />
+                <img src="./images/Logos/${element.image}" alt="${element.topic} logo" class="img-in-box" />
                 <h3 class="favorite-topic">${element.topic}</h3>
                 <div class="rating">
                 ${renderRating(element.rating)}

@@ -1,6 +1,12 @@
-export const renderFilter = (allCategory) =>{
-    let options = `<option value="">Default</option>`;
-    allCategory.forEach(elm=>{
+export const renderFilter = (myData) => {
+    const allCategory = new Set();
+    myData.forEach(elm => {
+        if (!allCategory.has(elm.category)) {
+            allCategory.add(elm.category);
+        }
+    });
+    let options = `<option value="ALL">ALL</option>`;
+    allCategory.forEach(elm => {
         options += `
         <option value="${elm}">${elm}</option>
         `;
