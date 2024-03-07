@@ -1,4 +1,5 @@
 import { renderFilter } from "../HTML_Rendering/renderFilter.js";
+import { renderSearchResult } from "../HTML_Rendering/renderSearchResult.js";
 import { renderCards } from "../HTML_Rendering/renderTopics.js";
 import { fetchTopics } from "../fetchData/fetchTopics.js";
 import { debounce } from "../shared/mainFunctions.js";
@@ -23,6 +24,7 @@ async function loadTopics() {
         // Code to display favorite topics
         allTopics.push(...topics);
         dataToShow = topics;
+        renderSearchResult(topics.length);
         renderCards(dataToShow);
         renderFilter(allTopics);
     } catch (error) {
@@ -41,10 +43,11 @@ loadTopics();
 
 
 // Event listener for input field with debounced function
-document.getElementById('searchInput').addEventListener('input', debounce(event => {
+document.getElementById('searchInput').addEventListener('input', debounce(async event => {
     const phrase = event.target.value.trim();
-    dataToShow = loadSearchResult(phrase);
-    // filterResult(dataToShow);
+    dataToShow = await loadSearchResult(phrase);
+    dataToShow = sortResult(dataToShow);
+    filterResult(dataToShow);
 }, 300));
 
 document.getElementById('filter').addEventListener("change", event =>{

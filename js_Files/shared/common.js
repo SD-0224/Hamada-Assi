@@ -2,7 +2,6 @@ import { setMode, toggleFavorites, toggleMode } from "./mainFunctions.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     const modeButton = document.getElementById("mode-btn");
-    const modeButtonText = document.getElementById("modeButtonText");
     const favoritesButton = document.getElementById("favorites-btn");
   
   
@@ -17,6 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setMode(isDarkMode);
   
     // Event listener for mode toggle button
-    modeButton.addEventListener("click", () => toggleMode(modeButtonText));
+    modeButton.addEventListener("click", () => toggleMode());
     favoritesButton.addEventListener("click", () => toggleFavorites());
   });

@@ -4,7 +4,6 @@ import { renderRating } from "./renderRating.js";
 export const renderCards = (myData) => {
   const courseContainer = document.getElementById("courses");
   let html = ``;
-  console.log(myData);
   myData.forEach(courseElement => {
     // create course card a > img , info ...
     html += `

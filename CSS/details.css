@@ -1,0 +1,178 @@
+/* start details page styles */
+
+.data-container {
+  display: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.data-container .data {
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  display: flex;
+  justify-content: space-between;
+  width: 62vw;
+}
+.data-container .data .text-data {
+  flex-basis: 61%;
+}
+
+.data-container .data .text-data .details {
+  position: relative;
+  padding: 30px 0px;
+}
+
+.data .text-data .details *:not(ion-icon) {
+  color: var(--body-text_dark);
+}
+
+.data .text-data .details h3 {
+  font-size: 1.06rem;
+  color: var(--brand-secondary);
+}
+
+.data .text-data .details h4 {
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+.data .text-data .details p {
+  font-size: 1rem;
+}
+
+.data .text-data .details::before {
+  content: "";
+  background: #333333;
+  height: 100%;
+  width: 200vw;
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: -1;
+}
+
+/* styles Sub Topics list */
+.data .text-data .sub-topics {
+  background: var(--bg_default);
+  margin: 20px 0;
+  border: 1px solid var(--lines-color);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.data .text-data .sub-topics h3 {
+  padding: 15px 20px;
+  font-size: 1.7rem;
+}
+
+.data .text-data .sub-topics ul li {
+  padding: 15px 20px;
+  border-top: 1px solid var(--lines-color);
+  display: flex;
+  align-items: center;
+}
+.data .text-data .sub-topics ul li * {
+  font-size: 1.3rem;
+}
+
+.data .text-data .sub-topics ul li ion-icon {
+  font-size: 1.5rem;
+}
+
+.data .text-data .sub-topics ul li ion-icon {
+  color: var(--brand-secondary);
+  padding-right: 20px;
+  flex-shrink: 0;
+}
+
+/* styles right box that contains image and add favorites button */
+
+.data-container .data .right-col-card {
+  flex-basis: 36%;
+  margin-top: 30px;
+  background: var(--bg_default_light);
+  height: fit-content;
+  border: 2px solid var(--lines-color_light);
+  box-shadow: 0px 0px 1px 0px var(--lines-color_light);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.data-container .data .right-col-card h3,
+.data-container .data .right-col-card p,
+.data-container .data .right-col-card span {
+  color: var(--body-text_light);
+}
+
+.data-container .data .right-col-card img {
+  height: 180px;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+
+.data-container .data .right-col-card .course-info {
+  flex-grow: 1;
+  padding: 15px;
+}
+
+.right-col-card .course-info h3 {
+  min-height: 30px;
+}
+
+.right-col-card .course-info h3 .author-info {
+  font-size: 0.9rem;
+}
+
+.right-col-card .course-info h3 span a {
+  text-decoration: underline;
+  color: var(--brand-primary);
+}
+
+.right-col-card .course-info .add-favourites {
+  padding: 25px 20px 15px;
+  border: 1px solid var(--lines-color_light);
+}
+
+.right-col-card .course-info .add-favourites .btn-container {
+  text-align: center;
+}
+
+.right-col-card .course-info .add-favourites .add-favourites p,
+.right-col-card .course-info .add-favourites .btn-container p {
+  font-size: 0.75rem;
+}
+
+.course-info .add-favourites .btn-container button {
+  padding: 15px 5px;
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+  color: var(--body-text_dark);
+  background: var(--brand-secondary);
+  border: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.course-info .add-favourites .btn-container button ion-icon {
+  font-size: 1.6rem;
+}
+
+.add-favourites .btn-container button .add-myFavorites {
+  color: var(--body-text_dark);
+  font-size: 1.25rem;
+}

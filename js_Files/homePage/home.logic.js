@@ -1,10 +1,11 @@
+import { renderSearchResult } from "../HTML_Rendering/renderSearchResult.js";
 import { renderCards } from "../HTML_Rendering/renderTopics.js";
 import { fetchSearch } from "../fetchData/fetchSearch.js";
 
 export async function loadSearchResult(phrase) {
     try {
         const topics = await fetchSearch(phrase);
-        renderCards(topics); // ************************************************************
+        renderSearchResult(topics.length);
         return topics;
     } catch (error) {
         // Handle error

@@ -1,13 +1,16 @@
 import { renderFavoritesCards } from "../HTML_Rendering/renderFavoritesCards.js";
+import { renderModeText } from "../HTML_Rendering/renderModeText.js";
 
 export const setMode = (isDarkMode) => {
+  let text ;
   if (isDarkMode) {
     document.body.classList.add("dark-mode");
-    modeButtonText.textContent = "Light Mode";
+    text = "Light Mode";
   } else {
     document.body.classList.remove("dark-mode");
-    modeButtonText.textContent = "Dark Mode";
+    text = "Dark Mode";
   }
+  renderModeText(text);
 }
 
 export const toggleFavorites = () => {
@@ -20,10 +23,10 @@ export const toggleFavorites = () => {
 };
 
 // Function to toggle mode
-export const toggleMode = (modeButtonText) => {
+export const toggleMode = () => {
   const isDarkMode = document.body.classList.toggle("dark-mode");
   const modeText = isDarkMode ? "Light Mode" : "Dark Mode";
-  modeButtonText.textContent = modeText;
+  renderModeText(modeText);
   localStorage.setItem("mode", isDarkMode ? "dark" : "light");
 }
 
