@@ -2,6 +2,11 @@
 
 Welcome to my web development project! This project aims to create a stunning website from scratch using HTML/CSS and integrating it with JavaScript for functionality. I'll also be utilizing backend APIs to fetch data dynamically.
 
+## Deployment
+
+The project is deployed and can be accessed [here](https://sd-0224.github.io/Hamada-Assi-project1/).
+
+
 ## Project Overview
 
 In this project, I have developed a website with the following functionalities:
