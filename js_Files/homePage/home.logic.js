@@ -19,8 +19,11 @@ export const filterResult = (dataToShow) => {
     renderCards(filtered);
 }
 
-export const sortResult = (dataToShow) => {
+export const sortResult = (dataToShow, dataToShowDefault) => {
     const value = document.getElementById('sort').value;
+    if (value === "DEFAULT") {
+        return dataToShowDefault;
+    }
     const currentArray = dataToShow;
     currentArray.sort((a, b) => {
         switch (value) {

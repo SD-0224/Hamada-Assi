@@ -9,6 +9,7 @@ import { filterResult, loadSearchResult, sortResult } from "./home.logic.js";
 
 const allTopics = [];
 let dataToShow = [];
+let dataToShowDefault = [];
 
 async function loadTopics() {
     const loadingIndicator = document.getElementById('loadingIndicator');
@@ -24,6 +25,7 @@ async function loadTopics() {
         // Code to display favorite topics
         allTopics.push(...topics);
         dataToShow = topics;
+        dataToShowDefault = [...topics];
         renderSearchResult(topics.length);
         renderCards(dataToShow);
         renderFilter(allTopics);
@@ -46,7 +48,8 @@ loadTopics();
 document.getElementById('searchInput').addEventListener('input', debounce(async event => {
     const phrase = event.target.value.trim();
     dataToShow = await loadSearchResult(phrase);
-    dataToShow = sortResult(dataToShow);
+    dataToShowDefault = [...dataToShow];
+    dataToShow = [...sortResult(dataToShow, dataToShowDefault)];
     filterResult(dataToShow);
 }, 300));
 
@@ -55,6 +58,6 @@ document.getElementById('filter').addEventListener("change", event =>{
 });
 
 document.getElementById('sort').addEventListener("change", (event) => {
-    dataToShow = sortResult(dataToShow);
+    dataToShow = [...sortResult(dataToShow, dataToShowDefault)];
     filterResult(dataToShow);
 });
