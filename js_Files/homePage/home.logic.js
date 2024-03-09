@@ -5,7 +5,7 @@ import { fetchSearch } from "../fetchData/fetchSearch.js";
 export async function loadSearchResult(phrase) {
     try {
         const topics = await fetchSearch(phrase);
-        renderSearchResult(topics.length);
+        // renderSearchResult(topics.length);
         return topics;
     } catch (error) {
         // Handle error
@@ -14,8 +14,10 @@ export async function loadSearchResult(phrase) {
 }
 
 export const filterResult = (dataToShow) => {
+    console.log("entered filter func.");
     const value = document.getElementById('filter').value;
     const filtered = value === "ALL" ? dataToShow : dataToShow.filter(elm => elm.category === value);
+    renderSearchResult(filtered.length);
     renderCards(filtered);
 }
 

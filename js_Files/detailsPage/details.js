@@ -12,12 +12,10 @@ let theElement;
 async function displayTopic() {
 
   const loadingIndicator = document.getElementById('loadingIndicator');
-  const loadingDots = document.getElementById('loadingDots');
   const errorMessage = document.getElementById('errorMessage');
   const dataContainer = document.getElementById('dataContainer');
 
   loadingIndicator.style.display = 'flex';
-  loadingDots.style.display = 'inline';
   errorMessage.style.display = 'none';
   dataContainer.style.display = 'none';
 
@@ -54,7 +52,6 @@ async function displayTopic() {
     console.error('Error displaying topic:', error);
   } finally {
     loadingIndicator.style.display = 'none';
-    loadingDots.style.display = 'none';
   }
 }
 

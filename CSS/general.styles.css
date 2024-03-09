@@ -71,7 +71,6 @@ option {
   font-size: 1rem;
 }
 
-#loadingIndicator,
 #errorMessage {
   display: flex;
   justify-content: center;
@@ -80,12 +79,6 @@ option {
   font-size: 3rem;
   background: var(--bg_default);
   height: 200px;
-}
-
-#loadingDots::after {
-  animation: dots 1s infinite;
-  content: ".";
-  -webkit-animation: dots 1s infinite;
 }
 
 body {
@@ -402,14 +395,5 @@ footer .heart {
   .data-container .data {
     display: block;
     padding-bottom: 20px;
-  }
-}
-
-@keyframes dots {
-  40% {
-    content: "..";
-  }
-  80% {
-    content: "...";
   }
 }

@@ -13,11 +13,9 @@ let dataToShowDefault = [];
 
 async function loadTopics() {
     const loadingIndicator = document.getElementById('loadingIndicator');
-    const loadingDots = document.getElementById('loadingDots');
     const errorMessage = document.getElementById('errorMessage');
-    
+
     loadingIndicator.style.display = 'flex';
-    loadingDots.style.display = 'inline';
     errorMessage.style.display = 'none';
 
     try {
@@ -36,7 +34,6 @@ async function loadTopics() {
         console.error('Error displaying topics:', error);
     } finally {
         loadingIndicator.style.display = 'none';
-        loadingDots.style.display = 'none';
     }
 }
 
@@ -53,7 +50,7 @@ document.getElementById('searchInput').addEventListener('input', debounce(async 
     filterResult(dataToShow);
 }, 300));
 
-document.getElementById('filter').addEventListener("change", event =>{
+document.getElementById('filter').addEventListener("change", event => {
     filterResult(dataToShow);
 });
 
