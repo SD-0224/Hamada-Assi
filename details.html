@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="This is the details page for a specific topic. View the details of the topic and add it to favorites if desired."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,7 +17,7 @@
     <link rel="stylesheet" href="CSS/variables.css" />
     <link rel="stylesheet" href="CSS/details.css" />
     <link rel="stylesheet" href="CSS/general.styles.css" />
-    
+
     <title>Web Topics | Hamada</title>
   </head>
   <body class="light-mode">
@@ -44,21 +48,25 @@
           <p>We have a new design that's fresh, modern, and easy to use.</p>
         </div>
       </section>
-      <div class="loadingIndicator-details" id="loadingIndicator" style="display: none;"><h2>Loading <span id="loadingDots"></span></h2></div>
-        <div class="errorMessage-details" id="errorMessage" style="display: none; color: red;"></div>
+      <div
+        class="loadingIndicator-details"
+        id="loadingIndicator"
+        style="display: none"
+      >
+        <h2>Loading <span id="loadingDots"></span></h2>
+      </div>
+      <div
+        class="errorMessage-details"
+        id="errorMessage"
+        style="display: none; color: red"
+      ></div>
       <section id="dataContainer" class="data-container">
         <div class="data">
           <div class="text-data">
-            <div class="details">
-              
-            </div>
-            <div class="sub-topics">
-              
-            </div>
+            <div class="details"></div>
+            <div class="sub-topics"></div>
           </div>
-          <div class="right-col-card">
-            
-          </div>
+          <div class="right-col-card"></div>
         </div>
       </section>
       <section class="my-favorites">

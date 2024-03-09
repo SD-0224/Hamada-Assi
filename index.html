@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to my web development project! This project aims to create a stunning website from scratch using HTML/CSS and integrating it with JavaScript for functionality. I'll also be utilizing backend APIs to fetch data dynamically."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- css files -->
     <link rel="stylesheet" href="CSS/variables.css" />
     <link rel="stylesheet" href="CSS/general.styles.css" />
     <link rel="stylesheet" href="CSS/home.css" />
-    
+
     <title>Web Topics | Hamada</title>
   </head>
   <body class="light-mode">
@@ -43,7 +47,11 @@
         <div class="search-container">
           <div class="search-field">
             <ion-icon name="search-outline" class="icon"></ion-icon>
-            <input id="searchInput" type="text" placeholder="Search the website..." />
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Search the website..."
+            />
             <div class="drop">
               <div class="drop-down sort-drop-down">
                 <label for="sort">Sort by:</label>
@@ -61,16 +69,19 @@
               </div>
             </div>
           </div>
-          <h2 id="searchMessage">"<span id="numberTopics">24</span>" Web Topics Found</h2>
+          <h2 id="searchMessage">
+            "<span id="numberTopics">24</span>" Web Topics Found
+          </h2>
         </div>
-        <div id="loadingIndicator" style="display: none;"><h2>Loading <span id="loadingDots"></span></h2></div>
-        <div id="errorMessage" style="display: none; color: red;"></div>
+        <div id="loadingIndicator" style="display: none">
+          <h2>Loading <span id="loadingDots"></span></h2>
+        </div>
+        <div id="errorMessage" style="display: none; color: red"></div>
         <div id="courses" class="courses"></div>
       </section>
       <section class="my-favorites">
         <h2>My Favorites Topics</h2>
-        <div class="favorite-container" id="favoriteContainer">
-        </div>
+        <div class="favorite-container" id="favoriteContainer"></div>
       </section>
     </main>
     <footer>

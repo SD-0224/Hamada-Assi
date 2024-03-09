@@ -59,7 +59,7 @@
 }
 
 .search-field .drop .drop-down label {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   padding-left: 4px;
 }
 .search-field .drop .drop-down select {
@@ -126,7 +126,7 @@
 }
 
 .courses .course .course-info .category {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   overflow: hidden;
   white-space: nowrap;
