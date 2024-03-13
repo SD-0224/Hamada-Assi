@@ -6,8 +6,11 @@ import { renderFavoritesCards } from "../HTML_Rendering/renderFavoritesCards.js"
 import { getIndexById, isFavorites } from "../shared/mainFunctions.js";
 import { renderBtnText } from "../HTML_Rendering/renderBtnText.js";
 
-const id = window.location.href.slice((window.location.href).indexOf('=') + 1);
+
 let theElement;
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
 
 async function displayTopic() {
 
